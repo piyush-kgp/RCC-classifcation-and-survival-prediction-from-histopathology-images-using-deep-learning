@@ -21,6 +21,7 @@ import os
 
 parser = argparse.ArgumentParser(description='Process args for Binary Classifer')
 parser.add_argument("--img_dir", type=str, required=True)
+parser.add_argument("--val_dir", type=str, required=False)
 parser.add_argument("--batch_size", type=int, default=128)
 parser.add_argument("--num_epochs", type=int, default=12)
 parser.add_argument("--num_nodes", type=int, default=256)
@@ -29,7 +30,6 @@ parser.add_argument("--learning_rate", type=float, default=5e-5)
 parser.add_argument("--image_size", type=int, default=224)
 parser.add_argument("--num_classes", type=int, default=2)
 parser.add_argument("--log_dir", type=str, default="runs/")
-parser.add_argument("--val_dir", type=str, required=True)
 parser.add_argument("--save_prefix", type=str, required=True)
 parser.add_argument("--model_checkpoint", type=str, required=False)
 parser.add_argument("--optimzer_checkpoint", type=str, required=False)
@@ -279,25 +279,27 @@ def main():
         transforms.RandomResizedCrop(224),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        transforms.Normalize([0.596, 0.436, 0.586], [0.2066, 0.240, 0.186])
         ]),
     'val': transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),
         transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        transforms.Normalize([0.596, 0.436, 0.586], [0.2066, 0.240, 0.186])
         ]),
     }
 
-    # dataset = datasets.ImageFolder(root=img_dir)
-    # num_train = int(len(dataset)*0.8)
-    # num_val = len(dataset) - num_train
-    # train_dataset, val_dataset = random_split(dataset, (num_train, num_val))
-    #
-    # train_dataset = MyDataset(train_dataset, data_transforms["train"])
-    # val_dataset = MyDataset(val_dataset, data_transforms["val"])
-    train_dataset = datasets.ImageFolder(root=img_dir, transform=data_transforms["train"])
-    val_dataset = datasets.ImageFolder(root=val_dir, transform=data_transforms["val"])
+    if val_dir is not None:
+        train_dataset = datasets.ImageFolder(root=img_dir, transform=data_transforms["train"])
+        val_dataset = datasets.ImageFolder(root=val_dir, transform=data_transforms["val"])
+    else:
+        dataset = datasets.ImageFolder(root=img_dir)
+        num_train = int(len(dataset)*0.8)
+        num_val = len(dataset) - num_train
+        train_dataset, val_dataset = random_split(dataset, (num_train, num_val))
+
+        train_dataset = MyDataset(train_dataset, data_transforms["train"])
+        val_dataset = MyDataset(val_dataset, data_transforms["val"])
 
 
     train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
@@ -318,9 +320,10 @@ def main():
     print(model, flush=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = model.to(device)
+    print("DEVICE {}".format(device), flush=True)
+    model = nn.DataParallel(model).to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(params=model.fc.parameters(), lr=learning_rate, weight_decay=0.05)
+    optimizer = optim.Adam(params=model.module.fc.parameters(), lr=learning_rate, weight_decay=0.05)
     exp_lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=2, verbose=True, factor = 0.2)
 
 
@@ -341,7 +344,7 @@ def main():
 
 
     # test(model, val_dataloader, criterion, device, -1, classes, writer)
-    val_acc_prev = 0
+    # val_acc_prev = 0
     for epoch in range(0, num_epochs):
         train_acc = train(model, train_dataloader, optimizer, criterion, device, epoch, exp_lr_scheduler, writer)
 
@@ -353,10 +356,10 @@ def main():
         # if val_acc-val_acc_prev <= 1: #<1% acc increase then stop
         #     break
         writer.add_scalars('Epoch wise Accuracy', {'train_acc': train_acc, 'val_acc': val_acc}, epoch)
-        slide_wise_analysis(root=val_dir, model=model, epoch=epoch, classes=classes, \
-                            transform=data_transforms["val"], device=device, \
-                            batch_size=batch_size, num_char_slide=60, save_prefix=save_prefix)
-        val_acc_prev = val_acc
+        # slide_wise_analysis(root=val_dir, model=model, epoch=epoch, classes=classes, \
+        #                     transform=data_transforms["val"], device=device, \
+        #                     batch_size=batch_size, num_char_slide=60, save_prefix=save_prefix)
+        # val_acc_prev = val_acc
 
     print("[MSG]: Last FC layer Trained", flush=True)
 
