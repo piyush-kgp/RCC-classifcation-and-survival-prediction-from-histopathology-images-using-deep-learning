@@ -309,22 +309,25 @@ def main():
     model.fc = nn.Linear(model.fc.in_features, num_classes)
 
     if model_checkpoint is not None:
-        model.load_state_dict(torch.load(model_checkpoint))
+        # TODO: This is because checkpoint dictionary has "module." in each key
+        ckpt = torch.load(model_checkpoint)
+        ckpt = {k[7:]: v for k, v in ckpt.items()}
+        model.load_state_dict(ckpt)
         print("[MSG] Loading {}".format(model_checkpoint), flush=True)
 
-    for param in model.parameters():
-        param.requires_grad = False
-    for param in model.fc.parameters():
-        param.requires_grad = True
-
-    print(model, flush=True)
-
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print("DEVICE {}".format(device), flush=True)
-    model = nn.DataParallel(model).to(device)
-    criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(params=model.module.fc.parameters(), lr=learning_rate, weight_decay=0.05)
-    exp_lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=2, verbose=True, factor = 0.2)
+    # for param in model.parameters():
+    #     param.requires_grad = False
+    # for param in model.fc.parameters():
+    #     param.requires_grad = True
+    #
+    # print(model, flush=True)
+    #
+    # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    # print("DEVICE {}".format(device), flush=True)
+    # model = nn.DataParallel(model).to(device)
+    # criterion = nn.CrossEntropyLoss()
+    # optimizer = optim.Adam(params=model.module.fc.parameters(), lr=learning_rate, weight_decay=0.05)
+    # exp_lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=2, verbose=True, factor = 0.2)
 
 
     writer = SummaryWriter(log_dir=log_dir)
@@ -345,48 +348,45 @@ def main():
 
     # test(model, val_dataloader, criterion, device, -1, classes, writer)
     # val_acc_prev = 0
-    for epoch in range(0, num_epochs):
-        train_acc = train(model, train_dataloader, optimizer, criterion, device, epoch, exp_lr_scheduler, writer)
-
-        for item, name in zip([model, optimizer, exp_lr_scheduler], ["model", "optimizer", "exp_lr_scheduler"]):
-            torch.save(item.state_dict(), "{}_{}_epoch_{}.pth".format(save_prefix, name, epoch))
-
-        val_acc = test(model, val_dataloader, criterion, device, epoch, classes, writer, save_prefix)
-        # removing this condition for now
-        # if val_acc-val_acc_prev <= 1: #<1% acc increase then stop
-        #     break
-        writer.add_scalars('Epoch wise Accuracy', {'train_acc': train_acc, 'val_acc': val_acc}, epoch)
-        # slide_wise_analysis(root=val_dir, model=model, epoch=epoch, classes=classes, \
-        #                     transform=data_transforms["val"], device=device, \
-        #                     batch_size=batch_size, num_char_slide=60, save_prefix=save_prefix)
-        # val_acc_prev = val_acc
-
-    print("[MSG]: Last FC layer Trained", flush=True)
-
-    # for param in model.parameters():
-    #     param.requires_grad = False
-    # for param in model.fc.parameters():
-    #     param.requires_grad = True
-    # for param in model.layer4[1].parameters():
-    #     param.requires_grad = True
-    # trainable_params = list(model.fc.parameters()) + list(model.layer4[1].parameters())
-    # optimizer = optim.Adam(params=trainable_params, lr=learning_rate, weight_decay=0.05)
-    # exp_lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=2, verbose=True, factor = 0.2)
-    #
-    # for epoch in range(epoch, num_epochs):
+    # for epoch in range(0, num_epochs):
     #     train_acc = train(model, train_dataloader, optimizer, criterion, device, epoch, exp_lr_scheduler, writer)
-    #     torch.save(model.state_dict(), "{}_model_epoch_{}.pth".format(save_prefix, epoch))
-    #     torch.save(optimizer.state_dict(), "{}_optimizer_epoch_{}.pth".format(save_prefix, epoch))
-    #     val_acc = test(model, val_dataloader, criterion, device, epoch, classes, writer, save_prefix)
-    #     if val_acc-val_acc_prev <= 1: #<1% acc increase then stop
-    #         break
-    #     writer.add_scalars('Epoch wise Accuracy', {'train_acc': train_acc, 'val_acc': val_acc}, epoch)
-    #     slide_wise_analysis(root=val_dir, model=model, epoch=epoch, classes=classes, \
-    #                         transform=data_transforms["val"], device=device, \
-    #                         batch_size=batch_size, num_char_slide=60, save_prefix=save_prefix)
-    #     val_acc_prev = val_acc
     #
-    # print("[MSG]: Last FC and Layer4[1] Trained", flush=True)
+    #     for item, name in zip([model, optimizer, exp_lr_scheduler], ["model", "optimizer", "exp_lr_scheduler"]):
+    #         torch.save(item.state_dict(), "{}_{}_epoch_{}.pth".format(save_prefix, name, epoch))
+    #
+    #     val_acc = test(model, val_dataloader, criterion, device, epoch, classes, writer, save_prefix)
+    #     # removing this condition for now
+    #     # if val_acc-val_acc_prev <= 1: #<1% acc increase then stop
+    #     #     break
+    #     writer.add_scalars('Epoch wise Accuracy', {'train_acc': train_acc, 'val_acc': val_acc}, epoch)
+    #     # slide_wise_analysis(root=val_dir, model=model, epoch=epoch, classes=classes, \
+    #     #                     transform=data_transforms["val"], device=device, \
+    #     #                     batch_size=batch_size, num_char_slide=60, save_prefix=save_prefix)
+    #     # val_acc_prev = val_acc
+    #
+    # print("[MSG]: Last FC layer Trained", flush=True)
+
+    for param in model.parameters():
+        param.requires_grad = False
+    for param in model.fc.parameters():
+        param.requires_grad = True
+    for param in model.layer4[1].parameters():
+        param.requires_grad = True
+    print(model, flush=True)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print("DEVICE {}".format(device), flush=True)
+    model = nn.DataParallel(model).to(device)
+    criterion = nn.CrossEntropyLoss()
+    trainable_params = list(model.module.fc.parameters()) + list(model.module.layer4[1].parameters())
+    optimizer = optim.Adam(params=trainable_params, lr=learning_rate, weight_decay=0.05)
+    exp_lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', patience=2, verbose=True, factor = 0.2)
+
+    for epoch in range(6, num_epochs):
+        train_acc = train(model, train_dataloader, optimizer, criterion, device, epoch, exp_lr_scheduler, writer)
+        torch.save(model.state_dict(), "{}_model_epoch_{}.pth".format(save_prefix, epoch))
+        val_acc = test(model, val_dataloader, criterion, device, epoch, classes, writer, save_prefix)
+        writer.add_scalars('Epoch wise Accuracy', {'train_acc': train_acc, 'val_acc': val_acc}, epoch)
+    print("[MSG]: Last FC and Layer4[1] Trained", flush=True)
     #
     # for param in model.parameters():
     #     param.requires_grad = False
