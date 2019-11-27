@@ -14,14 +14,14 @@ module load cuda/9.0
 module load cudnn/7-cuda-9.0
 source v3env/bin/activate
 
-for x in KIRC KIRP
+for x in PATCHES PATCHES_KIRP PATCHES_KICH
 do
-	for y in train valid
+	for y in train valid test
   do
     for z in cancer normal
   	do
       echo "Extracting features for ${x} ${y} ${z}"
-      python feature_extract.py --img_dir /ssd_scratch/cvit/piyush/${x}/${y}/${z} --npy_file_path /ssd_scratch/cvit/piyush/${x}_${y}_${z}.npy
+      python feature_extract.py --img_dir /ssd_scratch/cvit/medicalImaging/${x}/${y}/${z} --npy_file_path /ssd_scratch/cvit/piyush/${x}_${y}_${z}.npy
       echo "RSyncing features for ${x} ${y} ${z}"
       rsync -aPz /ssd_scratch/cvit/piyush/${x}_${y}_${z}.npy delta_one@ada:/share1/delta_one/
       echo "RSync Successful for ${x} ${y} ${z}"
