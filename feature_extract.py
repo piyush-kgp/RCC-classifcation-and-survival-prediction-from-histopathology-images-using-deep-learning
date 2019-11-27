@@ -64,15 +64,15 @@ def main():
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ])
 
-    png_files, jpg_files, jpeg_files = [glob.glob(os.path.join(img_dir, ext)) \
-                                       for ext in ["*.png", "*.jpg", "*.jpeg"]]
-    file_paths = png_files+jpg_files+jpeg_files
+    # png_files, jpg_files, jpeg_files = [glob.glob(os.path.join(img_dir, ext)) \
+    #                                    for ext in ["*.png", "*.jpg", "*.jpeg"]]
+    # file_paths = png_files+jpg_files+jpeg_files
+    file_paths = sorted(glob.glob("{}/*/*.png".format(img_dir)))
     dataset = ImageDataset(file_paths=file_paths, transform=transform)
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False)
 
     model = MODEL_DICT[imagenet_model]
-    model = nn.Sequential(model.conv1, model.bn1, model.relu, model.maxpool, \
-            model.layer1, model.layer2, model.layer3, model.layer4, model.avgpool)
+    model = nn.Sequential(*list(model.children())[:-1])
 
     for param in model.parameters():
         param.requires_grad = False
