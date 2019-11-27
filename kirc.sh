@@ -1,31 +1,25 @@
 #!/bin/bash
 #SBATCH -A delta_one
-#SBATCH --reservation=non-deadline-queue
-#SBATCH -n 10
-#SBATCH --gres=gpu:1
+#SBATCH -n 20
+#SBATCH --gres=gpu:2
 #SBATCH --nodes=1
-#SBATCH --mem-per-cpu=2048
+#SBATCH --mem-per-cpu=1024
 #SBATCH --mail-type=END
 #SBATCH --time 1-00:00:00
 #SBATCH -w gnode22
 
-# mkdir -p /ssd_scratch/cvit/piyush/
-# mkdir -p /ssd_scratch/cvit/piyush/KIRC/
-# mkdir -p /ssd_scratch/cvit/piyush/KIRC/train/
-# mkdir -p /ssd_scratch/cvit/piyush/KIRC/valid/
-# rsync -aPz delta_one@ada:/share1/dataset/medic_kidney/KIRC/patches/train/ /ssd_scratch/cvit/piyush/KIRC/train/
-# rsync -aPz delta_one@ada:/share1/dataset/medic_kidney/KIRC/patches/test/ /ssd_scratch/cvit/piyush/KIRC/train/
-# rsync -aPz delta_one@ada:/share1/dataset/medic_kidney/KIRC/patches/valid/ /ssd_scratch/cvit/piyush/KIRC/valid/
-
 module load cuda/9.0
 module load cudnn/7-cuda-9.0
-source v3env/bin/activate
+source /home/delta_one/v3env/bin/activate
 
-python classifier.py --img_dir /ssd_scratch/cvit/piyush/KIRC/train/ \
-                     --val_dir /ssd_scratch/cvit/piyush/KIRC/valid/ \
-                     --num_epochs 30 \
+python /home/delta_one/project/histopathology/classifier.py \
+                     --img_dir /ssd_scratch/cvit/medicalImaging/PATCHES/train/ \
+                     --val_dir /ssd_scratch/cvit/medicalImaging/PATCHES/valid/ \
+                     --num_epochs 10 \
                      --log_dir kirc_logs/  \
-                     --model_checkpoint checkpoints/KIRC_model_epoch_0.pth \
-                     --optimzer_checkpoint checkpoints/KIRC_optimizer_epoch_0.pth \
+                     --batch_size 64 \
+                     --model_checkpoint kirc_checkpoints/KIRC_model_epoch_5.pth \
+                     --optimzer_checkpoint kirc_checkpoints/KIRC_optimizer_epoch_5.pth \
+                     --exp_lr_scheduler kirc_checkpoints/KIRC_exp_lr_scheduler_epoch_5.pth \
                      --save_prefix KIRC > trg_log_kirc.txt
 sleep 5
