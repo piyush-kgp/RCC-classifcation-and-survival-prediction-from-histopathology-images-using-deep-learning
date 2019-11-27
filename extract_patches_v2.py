@@ -67,25 +67,25 @@ def create_patches(args):
     width, height = slide.dimensions
 
     # TODO: 4* signifies downsample ie slide.level_downsamples[1]
-    # threads=[]
-    # for x in range(0, width, 4*patch_size//2):
-    #     for y in range(0, height, 4*patch_size//2):
-    #         if x==0 or y==0 or x+4*patch_size>width or y+4*patch_size>height:
-    #             continue
-    #         t = threading.Thread(target=reject_or_save_patch, args=(x, y))
-    #         threads.append(t)
-    # thread_groups = [threads[i*100:(i+1)*100] for i in range(len(threads)//100+1)]
-    # for grp in thread_groups:
-    #     for t in grp:
-    #         t.start()
-    #     for t in grp:
-    #         t.join()
-
+    threads=[]
     for x in range(0, width, 4*patch_size//2):
         for y in range(0, height, 4*patch_size//2):
             if x==0 or y==0 or x+4*patch_size>width or y+4*patch_size>height:
                 continue
-            reject_or_save_patch(x, y)
+            t = threading.Thread(target=reject_or_save_patch, args=(x, y))
+            threads.append(t)
+    thread_groups = [threads[i*5:(i+1)*5] for i in range(len(threads)//5+1)]
+    for grp in thread_groups:
+        for t in grp:
+            t.start()
+        for t in grp:
+            t.join()
+
+    # for x in range(0, width, 4*patch_size//2):
+    #     for y in range(0, height, 4*patch_size//2):
+    #         if x==0 or y==0 or x+4*patch_size>width or y+4*patch_size>height:
+    #             continue
+    #         reject_or_save_patch(x, y)
     slide.close()
     print("Slide {} Done.".format(slide_file), flush=True)
 
