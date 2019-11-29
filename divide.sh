@@ -1,0 +1,6 @@
+cat train_cancer.txt | xargs -I {} bash -c "mv cancer/{} train/cancer/"
+cat valid_cancer.txt | xargs -I {} bash -c "mv cancer/{} valid/cancer/"
+cat test_cancer.txt | xargs -I {} bash -c "mv cancer/{} test/cancer/"
+cat train_normal.txt | xargs -I {} bash -c "mv normal/{} train/normal/"
+cat valid_normal.txt | xargs -I {} bash -c "mv normal/{} valid/normal/"
+cat test_normal.txt | xargs -I {} bash -c "mv normal/{} test/normal/"
