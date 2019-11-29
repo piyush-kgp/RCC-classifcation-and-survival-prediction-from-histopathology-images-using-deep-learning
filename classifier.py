@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 import os
 
 
-parser = argparse.ArgumentParser(description='Process args for Binary Classifer')
+parser = argparse.ArgumentParser(description='Process args for Classifer')
 parser.add_argument("--train_dir", type=str, required=True)
 parser.add_argument("--val_dir", type=str, required=False)
 parser.add_argument("--batch_size", type=int, default=128)
@@ -33,6 +33,7 @@ parser.add_argument("--model_checkpoint", type=str, required=False)
 
 
 MODEL_DICT = {"resnet18" : models.resnet18(pretrained=True),
+              "resnet34" : models.resnet34(pretrained=True)
              }
 
 def train(model, train_dataloader, optimizer, criterion, device, epoch, scheduler, writer):
@@ -207,7 +208,7 @@ def main():
     # training_loop(0, num_epochs, trainable_modules)
 
     trainable_modules = [model.fc, model.layer4[1]]
-    training_loop(4, num_epochs, trainable_modules, model, train_dataloader, \
+    training_loop(0, num_epochs, trainable_modules, model, train_dataloader, \
             val_dataloader, criterion, batch_size, learning_rate, num_epochs, save_prefix, writer)
 
     # trainable_modules = [model.fc, model.layer4[1], model.layer4[0]]
