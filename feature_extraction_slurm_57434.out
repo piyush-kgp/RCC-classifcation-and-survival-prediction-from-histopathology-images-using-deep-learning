@@ -1,0 +1,354 @@
+==========================================
+SLURM_JOB_ID = 57434
+SLURM_NODELIST = gnode26
+SLURM_JOB_GPUS = 0
+==========================================
+Extracting features for PATCHES train cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES/train/cancer at /ssd_scratch/cvit/piyush/PATCHES_train_cancer.npy
+[Done]: 64/259220
+[Done]: 6464/259220
+[Done]: 12864/259220
+[Done]: 19264/259220
+[Done]: 25664/259220
+[Done]: 32064/259220
+[Done]: 38464/259220
+[Done]: 44864/259220
+[Done]: 51264/259220
+[Done]: 57664/259220
+[Done]: 64064/259220
+[Done]: 70464/259220
+[Done]: 76864/259220
+[Done]: 83264/259220
+[Done]: 89664/259220
+[Done]: 96064/259220
+[Done]: 102464/259220
+[Done]: 108864/259220
+[Done]: 115264/259220
+[Done]: 121664/259220
+[Done]: 128064/259220
+[Done]: 134464/259220
+[Done]: 140864/259220
+[Done]: 147264/259220
+[Done]: 153664/259220
+[Done]: 160064/259220
+[Done]: 166464/259220
+[Done]: 172864/259220
+[Done]: 179264/259220
+[Done]: 185664/259220
+[Done]: 192064/259220
+[Done]: 198464/259220
+[Done]: 204864/259220
+[Done]: 211264/259220
+[Done]: 217664/259220
+[Done]: 224064/259220
+[Done]: 230464/259220
+[Done]: 236864/259220
+[Done]: 243264/259220
+[Done]: 249664/259220
+[Done]: 256064/259220
+FIN.
+RSyncing features for PATCHES train cancer
+sending incremental file list
+PATCHES_train_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        9,207,808   0%    8.74MB/s    0:01:57       18,579,456   1%    8.83MB/s    0:01:55       28,180,480   2%    8.93MB/s    0:01:52       37,978,112   3%    9.03MB/s    0:01:50       48,398,336   4%    9.33MB/s    0:01:46       58,589,184   5%    9.53MB/s    0:01:42       68,780,032   6%    9.67MB/s    0:01:40       79,364,096   7%    9.86MB/s    0:01:37       89,751,552   8%    9.85MB/s    0:01:36      100,040,704   9%    9.88MB/s    0:01:35      110,297,088  10%    9.89MB/s    0:01:33      120,422,400  11%    9.78MB/s    0:01:33      130,842,624  12%    9.79MB/s    0:01:32      141,361,152  13%    9.84MB/s    0:01:31      151,945,216  14%    9.92MB/s    0:01:29      162,398,208  15%   10.00MB/s    0:01:27      172,687,360  16%    9.97MB/s    0:01:27      182,943,744  17%    9.91MB/s    0:01:26      193,298,432  18%    9.85MB/s    0:01:26      203,587,584  19%    9.81MB/s    0:01:25      214,138,880  20%    9.87MB/s    0:01:23      224,657,408  21%    9.94MB/s    0:01:22      235,110,400  22%    9.96MB/s    0:01:21      245,628,928  23%   10.02MB/s    0:01:19      255,819,776  24%    9.93MB/s    0:01:19      266,076,160  25%    9.87MB/s    0:01:18      276,561,920  26%    9.88MB/s    0:01:17      286,785,536  27%    9.81MB/s    0:01:17      297,402,368  28%    9.91MB/s    0:01:15      307,953,664  29%    9.98MB/s    0:01:13      318,603,264  30%   10.02MB/s    0:01:12      328,826,880  30%   10.02MB/s    0:01:11      339,378,176  31%   10.00MB/s    0:01:10      349,896,704  32%   10.00MB/s    0:01:09      360,513,536  33%    9.99MB/s    0:01:08      370,966,528  34%   10.05MB/s    0:01:07      381,485,056  35%   10.04MB/s    0:01:06      391,643,136  36%    9.95MB/s    0:01:05      401,702,912  37%    9.82MB/s    0:01:05      412,024,832  38%    9.79MB/s    0:01:04      422,608,896  39%    9.80MB/s    0:01:03      432,832,512  40%    9.82MB/s    0:01:02      443,252,736  41%    9.90MB/s    0:01:00      453,804,032  42%    9.96MB/s    0:00:59      464,289,792  43%    9.94MB/s    0:00:58      474,710,016  44%    9.98MB/s    0:00:57      485,326,848  45%   10.03MB/s    0:00:56      495,845,376  46%   10.02MB/s    0:00:55      506,232,832  47%   10.00MB/s    0:00:54      516,521,984  48%    9.97MB/s    0:00:53      526,647,296  49%    9.85MB/s    0:00:53      536,903,680  50%    9.79MB/s    0:00:52      547,422,208  51%    9.82MB/s    0:00:51      558,006,272  52%    9.89MB/s    0:00:49      568,492,032  53%    9.98MB/s    0:00:48      579,043,328  54%   10.05MB/s    0:00:46      589,725,696  55%   10.09MB/s    0:00:45      600,408,064  56%   10.11MB/s    0:00:44      611,057,664  57%   10.15MB/s    0:00:43      621,543,424  58%   10.13MB/s    0:00:42      631,930,880  59%   10.06MB/s    0:00:41      642,285,568  60%    9.98MB/s    0:00:41      652,738,560  61%    9.93MB/s    0:00:40      663,289,856  62%    9.95MB/s    0:00:39      673,775,616  63%    9.98MB/s    0:00:37      684,294,144  64%   10.02MB/s    0:00:36      694,845,440  65%   10.03MB/s    0:00:35      705,429,504  66%   10.04MB/s    0:00:34      716,079,104  67%   10.08MB/s    0:00:33      726,761,472  68%   10.12MB/s    0:00:32      737,280,000  69%   10.11MB/s    0:00:31      747,896,832  70%   10.12MB/s    0:00:30      758,415,360  71%   10.09MB/s    0:00:29      768,933,888  72%   10.05MB/s    0:00:28      779,452,416  73%   10.05MB/s    0:00:27      790,003,712  74%   10.04MB/s    0:00:26      800,555,008  75%   10.04MB/s    0:00:25      811,073,536  76%   10.05MB/s    0:00:24      821,886,976  77%   10.12MB/s    0:00:23      832,405,504  78%   10.11MB/s    0:00:22      842,825,728  79%   10.07MB/s    0:00:21      853,016,576  80%    9.99MB/s    0:00:20      863,207,424  81%    9.84MB/s    0:00:19      873,496,576  82%    9.78MB/s    0:00:18      883,982,336  83%    9.80MB/s    0:00:17      894,566,400  84%    9.89MB/s    0:00:16      904,658,944  85%    9.87MB/s    0:00:15      914,948,096  86%    9.88MB/s    0:00:14      925,532,160  87%    9.90MB/s    0:00:13      936,181,760  88%    9.92MB/s    0:00:12      946,274,304  89%    9.92MB/s    0:00:11      956,760,064  90%    9.97MB/s    0:00:10      967,245,824  91%    9.94MB/s    0:00:09      977,534,976  92%    9.85MB/s    0:00:08      987,922,432  93%    9.92MB/s    0:00:07      998,375,424  94%    9.92MB/s    0:00:06    1,008,631,808  94%    9.87MB/s    0:00:05    1,018,724,352  95%    9.82MB/s    0:00:04    1,029,046,272  96%    9.80MB/s    0:00:03    1,039,499,264  97%    9.80MB/s    0:00:02    1,049,690,112  98%    9.78MB/s    0:00:01    1,059,618,816  99%    9.74MB/s    0:00:00    1,061,765,248 100%    9.90MB/s    0:01:42 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES train cancer
+Extracting features for PATCHES train normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES/train/normal at /ssd_scratch/cvit/piyush/PATCHES_train_normal.npy
+[Done]: 64/128653
+[Done]: 6464/128653
+[Done]: 12864/128653
+[Done]: 19264/128653
+[Done]: 25664/128653
+[Done]: 32064/128653
+[Done]: 38464/128653
+[Done]: 44864/128653
+[Done]: 51264/128653
+[Done]: 57664/128653
+[Done]: 64064/128653
+[Done]: 70464/128653
+[Done]: 76864/128653
+[Done]: 83264/128653
+[Done]: 89664/128653
+[Done]: 96064/128653
+[Done]: 102464/128653
+[Done]: 108864/128653
+[Done]: 115264/128653
+[Done]: 121664/128653
+[Done]: 128064/128653
+FIN.
+RSyncing features for PATCHES train normal
+sending incremental file list
+PATCHES_train_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        8,912,896   1%    8.45MB/s    0:00:59       18,382,848   3%    8.74MB/s    0:00:56       28,377,088   5%    9.00MB/s    0:00:54       38,797,312   7%    9.23MB/s    0:00:51       49,119,232   9%    9.58MB/s    0:00:48       59,506,688  11%    9.80MB/s    0:00:46       69,795,840  13%    9.87MB/s    0:00:45       80,183,296  15%    9.86MB/s    0:00:44       90,472,448  17%    9.85MB/s    0:00:43      100,761,600  19%    9.82MB/s    0:00:42      111,149,056  21%    9.84MB/s    0:00:41      121,438,208  23%    9.82MB/s    0:00:40      131,760,128  25%    9.83MB/s    0:00:39      142,147,584  26%    9.86MB/s    0:00:38      152,535,040  28%    9.86MB/s    0:00:37      163,053,568  30%    9.92MB/s    0:00:35      173,637,632  32%    9.98MB/s    0:00:34      183,336,960  34%    9.82MB/s    0:00:34      192,806,912  36%    9.59MB/s    0:00:34      202,047,488  38%    9.29MB/s    0:00:34      211,222,528  40%    8.95MB/s    0:00:34      220,102,656  41%    8.76MB/s    0:00:34      229,244,928  43%    8.69MB/s    0:00:33      238,911,488  45%    8.79MB/s    0:00:32      248,872,960  47%    8.98MB/s    0:00:30      259,096,576  49%    9.29MB/s    0:00:28      268,926,976  51%    9.45MB/s    0:00:26      279,216,128  52%    9.60MB/s    0:00:25      289,603,584  54%    9.70MB/s    0:00:23      299,859,968  56%    9.71MB/s    0:00:22      310,149,120  58%    9.83MB/s    0:00:21      320,569,344  60%    9.86MB/s    0:00:20      330,891,264  62%    9.84MB/s    0:00:19      341,082,112  64%    9.83MB/s    0:00:18      351,305,728  66%    9.81MB/s    0:00:17      361,299,968  68%    9.71MB/s    0:00:16      371,425,280  70%    9.66MB/s    0:00:15      381,616,128  72%    9.66MB/s    0:00:14      391,774,208  74%    9.65MB/s    0:00:13      402,161,664  76%    9.74MB/s    0:00:12      412,614,656  78%    9.82MB/s    0:00:11      423,034,880  80%    9.87MB/s    0:00:10      433,356,800  82%    9.91MB/s    0:00:09      443,678,720  84%    9.89MB/s    0:00:08      453,869,568  86%    9.82MB/s    0:00:07      464,289,792  88%    9.82MB/s    0:00:06      474,939,392  90%    9.91MB/s    0:00:05      485,490,688  92%    9.96MB/s    0:00:04      496,500,736  94%   10.16MB/s    0:00:02      506,986,496  96%   10.18MB/s    0:00:01      517,308,416  98%   10.10MB/s    0:00:00      526,962,816 100%    9.67MB/s    0:00:51 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES train normal
+Extracting features for PATCHES valid cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES/valid/cancer at /ssd_scratch/cvit/piyush/PATCHES_valid_cancer.npy
+[Done]: 64/55945
+[Done]: 6464/55945
+[Done]: 12864/55945
+[Done]: 19264/55945
+[Done]: 25664/55945
+[Done]: 32064/55945
+[Done]: 38464/55945
+[Done]: 44864/55945
+[Done]: 51264/55945
+FIN.
+RSyncing features for PATCHES valid cancer
+sending incremental file list
+PATCHES_valid_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        6,684,672   2%    6.34MB/s    0:00:34       13,598,720   5%    6.47MB/s    0:00:32       20,774,912   9%    6.59MB/s    0:00:30       28,213,248  12%    6.71MB/s    0:00:29       35,651,584  15%    6.90MB/s    0:00:27       43,188,224  18%    7.05MB/s    0:00:25       50,429,952  22%    7.06MB/s    0:00:24       57,442,304  25%    6.95MB/s    0:00:24       64,585,728  28%    6.88MB/s    0:00:23       71,892,992  31%    6.83MB/s    0:00:22       79,200,256  34%    6.85MB/s    0:00:21       86,474,752  37%    6.91MB/s    0:00:20       93,782,016  40%    6.95MB/s    0:00:19      101,023,744  44%    6.94MB/s    0:00:18      108,396,544  47%    6.96MB/s    0:00:16      115,671,040  50%    6.96MB/s    0:00:15      122,978,304  53%    6.96MB/s    0:00:14      130,318,336  56%    6.98MB/s    0:00:13      137,658,368  60%    6.97MB/s    0:00:12      144,998,400  63%    6.98MB/s    0:00:11      152,272,896  66%    6.97MB/s    0:00:10      159,547,392  69%    6.96MB/s    0:00:09      166,920,192  72%    6.96MB/s    0:00:08      174,227,456  76%    6.96MB/s    0:00:07      181,567,488  79%    6.98MB/s    0:00:06      188,776,448  82%    6.97MB/s    0:00:05      196,116,480  85%    6.96MB/s    0:00:04      203,489,280  88%    6.98MB/s    0:00:03      210,599,936  91%    6.92MB/s    0:00:02      217,907,200  95%    6.95MB/s    0:00:01      225,116,160  98%    6.91MB/s    0:00:00      229,150,848 100%    6.92MB/s    0:00:31 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES valid cancer
+Extracting features for PATCHES valid normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES/valid/normal at /ssd_scratch/cvit/piyush/PATCHES_valid_normal.npy
+[Done]: 64/28258
+[Done]: 6464/28258
+[Done]: 12864/28258
+[Done]: 19264/28258
+[Done]: 25664/28258
+FIN.
+RSyncing features for PATCHES valid normal
+sending incremental file list
+PATCHES_valid_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        8,945,664   7%    8.49MB/s    0:00:12       18,939,904  16%    9.00MB/s    0:00:10       29,032,448  25%    9.20MB/s    0:00:09       39,223,296  33%    9.33MB/s    0:00:08       49,512,448  42%    9.66MB/s    0:00:06       59,801,600  51%    9.73MB/s    0:00:05       70,025,216  60%    9.77MB/s    0:00:04       80,150,528  69%    9.75MB/s    0:00:03       90,275,840  77%    9.72MB/s    0:00:02      100,466,688  86%    9.70MB/s    0:00:01      110,592,000  95%    9.67MB/s    0:00:00      115,744,896 100%    9.57MB/s    0:00:11 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES valid normal
+Extracting features for PATCHES test cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES/test/cancer at /ssd_scratch/cvit/piyush/PATCHES_test_cancer.npy
+[Done]: 64/47024
+[Done]: 6464/47024
+[Done]: 12864/47024
+[Done]: 19264/47024
+[Done]: 25664/47024
+[Done]: 32064/47024
+[Done]: 38464/47024
+[Done]: 44864/47024
+FIN.
+RSyncing features for PATCHES test cancer
+sending incremental file list
+PATCHES_test_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        9,076,736   4%    8.62MB/s    0:00:20       18,219,008   9%    8.67MB/s    0:00:19       27,557,888  14%    8.75MB/s    0:00:18       38,043,648  19%    9.06MB/s    0:00:16       48,529,408  25%    9.40MB/s    0:00:14       58,916,864  30%    9.70MB/s    0:00:13       69,435,392  36%    9.98MB/s    0:00:12       79,691,776  41%    9.93MB/s    0:00:11       90,112,000  46%    9.91MB/s    0:00:10      100,499,456  52%    9.91MB/s    0:00:09      110,886,912  57%    9.88MB/s    0:00:08      121,405,440  63%    9.94MB/s    0:00:06      131,825,664  68%    9.94MB/s    0:00:05      142,278,656  73%    9.96MB/s    0:00:04      152,698,880  79%    9.96MB/s    0:00:03      163,020,800  84%    9.92MB/s    0:00:02      173,604,864  90%    9.96MB/s    0:00:01      184,287,232  95%   10.01MB/s    0:00:00      192,610,432 100%    9.76MB/s    0:00:18 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES test cancer
+Extracting features for PATCHES test normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES/test/normal at /ssd_scratch/cvit/piyush/PATCHES_test_normal.npy
+[Done]: 64/25030
+[Done]: 6464/25030
+[Done]: 12864/25030
+[Done]: 19264/25030
+FIN.
+RSyncing features for PATCHES test normal
+sending incremental file list
+PATCHES_test_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        8,650,752   8%    8.21MB/s    0:00:11       17,596,416  17%    8.37MB/s    0:00:09       27,328,512  26%    8.67MB/s    0:00:08       37,715,968  36%    8.98MB/s    0:00:07       47,972,352  46%    9.38MB/s    0:00:05       58,359,808  56%    9.72MB/s    0:00:04       68,714,496  67%    9.86MB/s    0:00:03       78,938,112  76%    9.82MB/s    0:00:02       89,292,800  87%    9.84MB/s    0:00:01       99,549,184  97%    9.81MB/s    0:00:00      102,523,008 100%    9.50MB/s    0:00:10 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES test normal
+Extracting features for PATCHES_KIRP train cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KIRP/train/cancer at /ssd_scratch/cvit/piyush/PATCHES_KIRP_train_cancer.npy
+[Done]: 64/161530
+[Done]: 6464/161530
+[Done]: 12864/161530
+[Done]: 19264/161530
+[Done]: 25664/161530
+[Done]: 32064/161530
+[Done]: 38464/161530
+[Done]: 44864/161530
+[Done]: 51264/161530
+[Done]: 57664/161530
+[Done]: 64064/161530
+[Done]: 70464/161530
+[Done]: 76864/161530
+[Done]: 83264/161530
+[Done]: 89664/161530
+[Done]: 96064/161530
+[Done]: 102464/161530
+[Done]: 108864/161530
+[Done]: 115264/161530
+[Done]: 121664/161530
+[Done]: 128064/161530
+[Done]: 134464/161530
+[Done]: 140864/161530
+[Done]: 147264/161530
+[Done]: 153664/161530
+[Done]: 160064/161530
+FIN.
+RSyncing features for PATCHES_KIRP train cancer
+sending incremental file list
+PATCHES_KIRP_train_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        9,076,736   1%    8.62MB/s    0:01:13       18,546,688   2%    8.83MB/s    0:01:11       28,540,928   4%    9.07MB/s    0:01:08       38,436,864   5%    9.16MB/s    0:01:06       48,431,104   7%    9.39MB/s    0:01:03       58,392,576   8%    9.50MB/s    0:01:01       68,419,584  10%    9.51MB/s    0:01:00       78,512,128  11%    9.55MB/s    0:00:59       88,670,208  13%    9.59MB/s    0:00:58       98,762,752  14%    9.61MB/s    0:00:57      108,658,688  16%    9.58MB/s    0:00:56      118,652,928  17%    9.56MB/s    0:00:55      128,614,400  19%    9.52MB/s    0:00:54      138,608,640  20%    9.49MB/s    0:00:53      148,701,184  22%    9.54MB/s    0:00:52      158,662,656  23%    9.53MB/s    0:00:51      168,722,432  25%    9.55MB/s    0:00:50      178,782,208  27%    9.57MB/s    0:00:49      189,005,824  28%    9.60MB/s    0:00:48      199,196,672  30%    9.66MB/s    0:00:46      209,190,912  31%    9.64MB/s    0:00:45      219,152,384  33%    9.62MB/s    0:00:44      229,113,856  34%    9.56MB/s    0:00:44      239,271,936  36%    9.55MB/s    0:00:43      249,561,088  37%    9.62MB/s    0:00:41      259,817,472  39%    9.69MB/s    0:00:40      270,041,088  40%    9.75MB/s    0:00:39      280,199,168  42%    9.75MB/s    0:00:38      290,357,248  43%    9.72MB/s    0:00:37      300,482,560  45%    9.69MB/s    0:00:36      310,706,176  46%    9.70MB/s    0:00:35      320,831,488  48%    9.69MB/s    0:00:34      331,055,104  50%    9.70MB/s    0:00:33      341,245,952  51%    9.72MB/s    0:00:32      351,535,104  53%    9.73MB/s    0:00:31      360,873,984  54%    9.54MB/s    0:00:30      370,540,544  56%    9.41MB/s    0:00:30      380,207,104  57%    9.28MB/s    0:00:29      390,037,504  58%    9.18MB/s    0:00:28      400,130,048  60%    9.35MB/s    0:00:27      410,222,592  62%    9.46MB/s    0:00:25      420,478,976  63%    9.60MB/s    0:00:24      430,604,288  65%    9.67MB/s    0:00:23      440,500,224  66%    9.62MB/s    0:00:22      450,199,552  68%    9.52MB/s    0:00:21      459,964,416  69%    9.40MB/s    0:00:20      470,056,960  71%    9.39MB/s    0:00:19      480,083,968  72%    9.43MB/s    0:00:18      490,274,816  74%    9.54MB/s    0:00:17      500,400,128  75%    9.64MB/s    0:00:16      510,525,440  77%    9.64MB/s    0:00:15      520,519,680  78%    9.63MB/s    0:00:14      530,513,920  80%    9.59MB/s    0:00:13      540,508,160  81%    9.56MB/s    0:00:12      550,469,632  83%    9.52MB/s    0:00:11      560,529,408  84%    9.54MB/s    0:00:10      570,654,720  86%    9.57MB/s    0:00:09      580,648,960  87%    9.57MB/s    0:00:08      590,643,200  89%    9.58MB/s    0:00:07      600,670,208  90%    9.57MB/s    0:00:06      610,893,824  92%    9.59MB/s    0:00:05      620,855,296  93%    9.58MB/s    0:00:04      630,915,072  95%    9.59MB/s    0:00:03      641,007,616  96%    9.61MB/s    0:00:02      651,100,160  98%    9.58MB/s    0:00:01      661,094,400  99%    9.59MB/s    0:00:00      661,627,008 100%    9.55MB/s    0:01:06 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KIRP train cancer
+Extracting features for PATCHES_KIRP train normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KIRP/train/normal at /ssd_scratch/cvit/piyush/PATCHES_KIRP_train_normal.npy
+[Done]: 64/46896
+[Done]: 6464/46896
+[Done]: 12864/46896
+[Done]: 19264/46896
+[Done]: 25664/46896
+[Done]: 32064/46896
+[Done]: 38464/46896
+[Done]: 44864/46896
+FIN.
+RSyncing features for PATCHES_KIRP train normal
+sending incremental file list
+PATCHES_KIRP_train_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        7,045,120   3%    6.69MB/s    0:00:27       14,319,616   7%    6.81MB/s    0:00:25       22,052,864  11%    7.00MB/s    0:00:23       29,949,952  15%    7.13MB/s    0:00:22       37,847,040  19%    7.34MB/s    0:00:20       45,711,360  23%    7.48MB/s    0:00:19       53,542,912  27%    7.49MB/s    0:00:18       61,308,928  31%    7.47MB/s    0:00:17       68,943,872  35%    7.41MB/s    0:00:16       76,709,888  39%    7.39MB/s    0:00:15       84,541,440  44%    7.39MB/s    0:00:14       92,274,688  48%    7.38MB/s    0:00:13      100,040,704  52%    7.41MB/s    0:00:12      107,642,880  56%    7.37MB/s    0:00:11      115,408,896  60%    7.35MB/s    0:00:10      123,207,680  64%    7.37MB/s    0:00:09      131,137,536  68%    7.41MB/s    0:00:08      138,936,320  72%    7.45MB/s    0:00:06      146,931,712  76%    7.51MB/s    0:00:05      154,566,656  80%    7.47MB/s    0:00:04      162,430,976  84%    7.45MB/s    0:00:03      170,196,992  88%    7.44MB/s    0:00:02      177,963,008  92%    7.39MB/s    0:00:01      185,761,792  96%    7.42MB/s    0:00:00      192,086,144 100%    7.37MB/s    0:00:24 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KIRP train normal
+Extracting features for PATCHES_KIRP valid cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KIRP/valid/cancer at /ssd_scratch/cvit/piyush/PATCHES_KIRP_valid_cancer.npy
+[Done]: 64/40009
+[Done]: 6464/40009
+[Done]: 12864/40009
+[Done]: 19264/40009
+[Done]: 25664/40009
+[Done]: 32064/40009
+[Done]: 38464/40009
+FIN.
+RSyncing features for PATCHES_KIRP valid cancer
+sending incremental file list
+PATCHES_KIRP_valid_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        9,994,240   6%    9.50MB/s    0:00:15       20,283,392  12%    9.66MB/s    0:00:14       30,572,544  18%    9.71MB/s    0:00:13       40,534,016  24%    9.65MB/s    0:00:12       50,692,096  30%    9.70MB/s    0:00:11       61,014,016  37%    9.70MB/s    0:00:10       70,877,184  43%    9.60MB/s    0:00:09       80,904,192  49%    9.62MB/s    0:00:08       91,193,344  55%    9.65MB/s    0:00:07      101,122,048  61%    9.56MB/s    0:00:06      111,673,344  68%    9.72MB/s    0:00:05      122,191,872  74%    9.84MB/s    0:00:04      132,481,024  80%    9.84MB/s    0:00:03      142,245,888  86%    9.80MB/s    0:00:02      152,174,592  92%    9.65MB/s    0:00:01      162,136,064  98%    9.52MB/s    0:00:00      163,876,992 100%    9.65MB/s    0:00:16 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KIRP valid cancer
+Extracting features for PATCHES_KIRP valid normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KIRP/valid/normal at /ssd_scratch/cvit/piyush/PATCHES_KIRP_valid_normal.npy
+[Done]: 64/8288
+[Done]: 6464/8288
+FIN.
+RSyncing features for PATCHES_KIRP valid normal
+sending incremental file list
+PATCHES_KIRP_valid_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        8,814,592  25%    8.38MB/s    0:00:02       18,677,760  55%    8.89MB/s    0:00:01       28,737,536  84%    9.12MB/s    0:00:00       33,947,776 100%    9.20MB/s    0:00:03 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KIRP valid normal
+Extracting features for PATCHES_KIRP test cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KIRP/test/cancer at /ssd_scratch/cvit/piyush/PATCHES_KIRP_test_cancer.npy
+[Done]: 64/38036
+[Done]: 6464/38036
+[Done]: 12864/38036
+[Done]: 19264/38036
+[Done]: 25664/38036
+[Done]: 32064/38036
+FIN.
+RSyncing features for PATCHES_KIRP test cancer
+sending incremental file list
+PATCHES_KIRP_test_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        7,897,088   5%    7.50MB/s    0:00:19       16,252,928  10%    7.73MB/s    0:00:17       25,165,824  16%    7.99MB/s    0:00:15       34,013,184  21%    8.10MB/s    0:00:14       42,827,776  27%    8.32MB/s    0:00:13       51,871,744  33%    8.48MB/s    0:00:11       60,948,480  39%    8.52MB/s    0:00:10       69,926,912  44%    8.55MB/s    0:00:09       78,872,576  50%    8.59MB/s    0:00:08       87,916,544  56%    8.59MB/s    0:00:07       96,927,744  62%    8.57MB/s    0:00:06      105,906,176  67%    8.57MB/s    0:00:05      114,950,144  73%    8.59MB/s    0:00:04      123,895,808  79%    8.57MB/s    0:00:03      132,743,168  85%    8.53MB/s    0:00:02      141,656,064  90%    8.51MB/s    0:00:01      150,568,960  96%    8.49MB/s    0:00:00      155,795,584 100%    8.44MB/s    0:00:17 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KIRP test cancer
+Extracting features for PATCHES_KIRP test normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KIRP/test/normal at /ssd_scratch/cvit/piyush/PATCHES_KIRP_test_normal.npy
+[Done]: 64/6853
+[Done]: 6464/6853
+FIN.
+RSyncing features for PATCHES_KIRP test normal
+sending incremental file list
+PATCHES_KIRP_test_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        8,552,448  30%    8.11MB/s    0:00:02       17,170,432  61%    8.16MB/s    0:00:01       26,116,096  93%    8.28MB/s    0:00:00       28,070,016 100%    8.37MB/s    0:00:03 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KIRP test normal
+Extracting features for PATCHES_KICH train cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KICH/train/cancer at /ssd_scratch/cvit/piyush/PATCHES_KICH_train_cancer.npy
+[Done]: 64/199272
+[Done]: 6464/199272
+[Done]: 12864/199272
+[Done]: 19264/199272
+[Done]: 25664/199272
+[Done]: 32064/199272
+[Done]: 38464/199272
+[Done]: 44864/199272
+[Done]: 51264/199272
+[Done]: 57664/199272
+[Done]: 64064/199272
+[Done]: 70464/199272
+[Done]: 76864/199272
+[Done]: 83264/199272
+[Done]: 89664/199272
+[Done]: 96064/199272
+[Done]: 102464/199272
+[Done]: 108864/199272
+[Done]: 115264/199272
+[Done]: 121664/199272
+[Done]: 128064/199272
+[Done]: 134464/199272
+[Done]: 140864/199272
+[Done]: 147264/199272
+[Done]: 153664/199272
+[Done]: 160064/199272
+[Done]: 166464/199272
+[Done]: 172864/199272
+[Done]: 179264/199272
+[Done]: 185664/199272
+[Done]: 192064/199272
+[Done]: 198464/199272
+FIN.
+RSyncing features for PATCHES_KICH train cancer
+sending incremental file list
+PATCHES_KICH_train_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        8,781,824   1%    8.34MB/s    0:01:34       17,727,488   2%    8.43MB/s    0:01:32       27,000,832   3%    8.56MB/s    0:01:29       36,700,160   4%    8.73MB/s    0:01:27       46,563,328   5%    9.00MB/s    0:01:23       56,524,800   6%    9.24MB/s    0:01:20       66,650,112   8%    9.44MB/s    0:01:17       76,873,728   9%    9.57MB/s    0:01:15       87,031,808  10%    9.64MB/s    0:01:13       97,157,120  11%    9.68MB/s    0:01:12      107,216,896  13%    9.66MB/s    0:01:11      117,309,440  14%    9.63MB/s    0:01:10      127,664,128  15%    9.68MB/s    0:01:09      137,920,512  16%    9.71MB/s    0:01:08      148,209,664  18%    9.76MB/s    0:01:06      158,466,048  19%    9.80MB/s    0:01:05      168,886,272  20%    9.82MB/s    0:01:04      179,142,656  21%    9.82MB/s    0:01:03      189,530,112  23%    9.85MB/s    0:01:02      199,720,960  24%    9.83MB/s    0:01:01      210,010,112  25%    9.79MB/s    0:01:00      218,988,544  26%    9.49MB/s    0:01:01      228,130,816  27%    9.19MB/s    0:01:02      237,568,000  29%    9.01MB/s    0:01:02      247,660,544  30%    8.97MB/s    0:01:01      258,113,536  31%    9.32MB/s    0:00:58      268,402,688  32%    9.60MB/s    0:00:55      278,626,304  34%    9.78MB/s    0:00:53      288,882,688  35%    9.83MB/s    0:00:52      299,040,768  36%    9.76MB/s    0:00:51      309,198,848  37%    9.72MB/s    0:00:50      319,291,392  39%    9.69MB/s    0:00:50      329,613,312  40%    9.70MB/s    0:00:48      340,131,840  41%    9.78MB/s    0:00:47      350,420,992  42%    9.82MB/s    0:00:46      360,742,912  44%    9.88MB/s    0:00:45      371,130,368  45%    9.89MB/s    0:00:43      381,157,376  46%    9.78MB/s    0:00:43      391,282,688  47%    9.74MB/s    0:00:42      401,375,232  49%    9.68MB/s    0:00:41      411,402,240  50%    9.60MB/s    0:00:41      421,527,552  51%    9.62MB/s    0:00:40      431,783,936  52%    9.66MB/s    0:00:38      442,138,624  54%    9.72MB/s    0:00:37      452,657,152  55%    9.83MB/s    0:00:36      462,880,768  56%    9.86MB/s    0:00:35      472,809,472  57%    9.78MB/s    0:00:34      482,869,248  59%    9.71MB/s    0:00:33      492,961,792  60%    9.60MB/s    0:00:32      503,087,104  61%    9.58MB/s    0:00:31      512,950,272  62%    9.56MB/s    0:00:30      523,141,120  64%    9.59MB/s    0:00:29      533,266,432  65%    9.60MB/s    0:00:28      543,621,120  66%    9.66MB/s    0:00:27      553,877,504  67%    9.76MB/s    0:00:26      564,199,424  69%    9.78MB/s    0:00:25      574,357,504  70%    9.79MB/s    0:00:24      584,548,352  71%    9.75MB/s    0:00:23      594,673,664  72%    9.72MB/s    0:00:22      604,700,672  74%    9.65MB/s    0:00:21      614,727,680  75%    9.62MB/s    0:00:20      625,049,600  76%    9.65MB/s    0:00:19      635,305,984  77%    9.69MB/s    0:00:18      645,496,832  79%    9.72MB/s    0:00:17      655,622,144  80%    9.74MB/s    0:00:16      665,747,456  81%    9.70MB/s    0:00:15      675,905,536  82%    9.67MB/s    0:00:14      686,063,616  84%    9.67MB/s    0:00:13      696,123,392  85%    9.65MB/s    0:00:12      706,314,240  86%    9.67MB/s    0:00:11      716,374,016  87%    9.64MB/s    0:00:10      726,368,256  88%    9.60MB/s    0:00:09      736,657,408  90%    9.65MB/s    0:00:08      746,946,560  91%    9.68MB/s    0:00:06      757,170,176  92%    9.72MB/s    0:00:05      767,459,328  94%    9.79MB/s    0:00:04      777,814,016  95%    9.81MB/s    0:00:03      788,103,168  96%    9.81MB/s    0:00:02      798,326,784  97%    9.80MB/s    0:00:01      808,452,096  99%    9.76MB/s    0:00:00      816,218,240 100%    9.63MB/s    0:01:20 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KICH train cancer
+Extracting features for PATCHES_KICH train normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KICH/train/normal at /ssd_scratch/cvit/piyush/PATCHES_KICH_train_normal.npy
+[Done]: 64/75531
+[Done]: 6464/75531
+[Done]: 12864/75531
+[Done]: 19264/75531
+[Done]: 25664/75531
+[Done]: 32064/75531
+[Done]: 38464/75531
+[Done]: 44864/75531
+[Done]: 51264/75531
+[Done]: 57664/75531
+[Done]: 64064/75531
+[Done]: 70464/75531
+FIN.
+RSyncing features for PATCHES_KICH train normal
+sending incremental file list
+PATCHES_KICH_train_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        9,011,200   2%    8.56MB/s    0:00:34       18,055,168   5%    8.59MB/s    0:00:33       27,361,280   8%    8.69MB/s    0:00:31       37,289,984  12%    8.88MB/s    0:00:29       47,710,208  15%    9.22MB/s    0:00:27       58,261,504  18%    9.57MB/s    0:00:25       68,648,960  22%    9.83MB/s    0:00:23       79,036,416  25%    9.94MB/s    0:00:22       89,554,944  28%    9.97MB/s    0:00:21       99,975,168  32%    9.94MB/s    0:00:20      110,362,624  35%    9.94MB/s    0:00:19      120,553,472  38%    9.89MB/s    0:00:18      130,940,928  42%    9.85MB/s    0:00:17      141,492,224  45%    9.88MB/s    0:00:16      151,715,840  49%    9.85MB/s    0:00:15      161,939,456  52%    9.86MB/s    0:00:14      172,097,536  55%    9.81MB/s    0:00:13      182,091,776  58%    9.68MB/s    0:00:12      192,217,088  62%    9.66MB/s    0:00:11      202,375,168  65%    9.64MB/s    0:00:10      212,631,552  68%    9.66MB/s    0:00:09      222,789,632  72%    9.70MB/s    0:00:08      233,046,016  75%    9.73MB/s    0:00:07      243,400,704  78%    9.78MB/s    0:00:06      253,624,320  81%    9.78MB/s    0:00:05      263,913,472  85%    9.80MB/s    0:00:04      274,071,552  88%    9.78MB/s    0:00:03      284,196,864  91%    9.73MB/s    0:00:02      294,453,248  95%    9.73MB/s    0:00:01      304,611,328  98%    9.70MB/s    0:00:00      309,375,104 100%    9.68MB/s    0:00:30 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KICH train normal
+Extracting features for PATCHES_KICH valid cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KICH/valid/cancer at /ssd_scratch/cvit/piyush/PATCHES_KICH_valid_cancer.npy
+[Done]: 64/58260
+[Done]: 6464/58260
+[Done]: 12864/58260
+[Done]: 19264/58260
+[Done]: 25664/58260
+[Done]: 32064/58260
+[Done]: 38464/58260
+[Done]: 44864/58260
+[Done]: 51264/58260
+[Done]: 57664/58260
+FIN.
+RSyncing features for PATCHES_KICH valid cancer
+sending incremental file list
+PATCHES_KICH_valid_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        9,076,736   3%    8.62MB/s    0:00:25       18,579,456   7%    8.85MB/s    0:00:24       28,082,176  11%    8.92MB/s    0:00:23       37,584,896  15%    8.95MB/s    0:00:21       47,677,440  19%    9.20MB/s    0:00:20       57,999,360  24%    9.39MB/s    0:00:18       68,354,048  28%    9.59MB/s    0:00:17       78,643,200  32%    9.78MB/s    0:00:15       88,866,816  37%    9.82MB/s    0:00:14       99,319,808  41%    9.84MB/s    0:00:13      109,641,728  45%    9.83MB/s    0:00:12      119,865,344  50%    9.82MB/s    0:00:11      130,023,424  54%    9.81MB/s    0:00:10      140,378,112  58%    9.79MB/s    0:00:09      150,929,408  63%    9.84MB/s    0:00:08      161,153,024  67%    9.84MB/s    0:00:07      171,245,568  71%    9.82MB/s    0:00:06      181,403,648  76%    9.77MB/s    0:00:05      191,528,960  80%    9.67MB/s    0:00:04      201,687,040  84%    9.66MB/s    0:00:03      211,746,816  88%    9.65MB/s    0:00:02      221,937,664  93%    9.66MB/s    0:00:01      232,128,512  97%    9.68MB/s    0:00:00      238,633,088 100%    9.62MB/s    0:00:23 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KICH valid cancer
+Extracting features for PATCHES_KICH valid normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KICH/valid/normal at /ssd_scratch/cvit/piyush/PATCHES_KICH_valid_normal.npy
+[Done]: 64/16230
+[Done]: 6464/16230
+[Done]: 12864/16230
+FIN.
+RSyncing features for PATCHES_KICH valid normal
+sending incremental file list
+PATCHES_KICH_valid_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        8,847,360  13%    8.40MB/s    0:00:06       18,317,312  27%    8.71MB/s    0:00:05       27,787,264  41%    8.81MB/s    0:00:04       37,486,592  56%    8.92MB/s    0:00:03       47,480,832  71%    9.20MB/s    0:00:02       57,540,608  86%    9.34MB/s    0:00:00       66,478,208 100%    9.18MB/s    0:00:06 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KICH valid normal
+Extracting features for PATCHES_KICH test cancer
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KICH/test/cancer at /ssd_scratch/cvit/piyush/PATCHES_KICH_test_cancer.npy
+[Done]: 64/37921
+[Done]: 6464/37921
+[Done]: 12864/37921
+[Done]: 19264/37921
+[Done]: 25664/37921
+[Done]: 32064/37921
+FIN.
+RSyncing features for PATCHES_KICH test cancer
+sending incremental file list
+PATCHES_KICH_test_cancer.npy
+         32,768   0%    0.00kB/s    0:00:00        8,716,288   5%    8.26MB/s    0:00:17       17,825,792  11%    8.47MB/s    0:00:15       28,278,784  18%    8.96MB/s    0:00:13       38,633,472  24%    9.18MB/s    0:00:12       49,020,928  31%    9.59MB/s    0:00:10       59,310,080  38%    9.88MB/s    0:00:09       69,632,000  44%    9.85MB/s    0:00:08       80,084,992  51%    9.87MB/s    0:00:07       90,636,288  58%    9.91MB/s    0:00:06      100,827,136  64%    9.89MB/s    0:00:05      111,083,520  71%    9.88MB/s    0:00:04      121,307,136  78%    9.82MB/s    0:00:03      131,497,984  84%    9.74MB/s    0:00:02      141,819,904  91%    9.77MB/s    0:00:01      152,272,896  98%    9.82MB/s    0:00:00      155,324,544 100%    9.67MB/s    0:00:15 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KICH test cancer
+Extracting features for PATCHES_KICH test normal
+Extracting images from /ssd_scratch/cvit/medicalImaging/PATCHES_KICH/test/normal at /ssd_scratch/cvit/piyush/PATCHES_KICH_test_normal.npy
+[Done]: 64/15778
+[Done]: 6464/15778
+[Done]: 12864/15778
+FIN.
+RSyncing features for PATCHES_KICH test normal
+sending incremental file list
+PATCHES_KICH_test_normal.npy
+         32,768   0%    0.00kB/s    0:00:00        8,585,216  13%    8.15MB/s    0:00:06       17,530,880  27%    8.34MB/s    0:00:05       26,345,472  40%    8.36MB/s    0:00:04       36,667,392  56%    8.73MB/s    0:00:03       46,858,240  72%    9.12MB/s    0:00:01       57,147,392  88%    9.44MB/s    0:00:00       64,626,816 100%    9.14MB/s    0:00:06 (xfr#1, to-chk=0/1)
+RSync Successful for PATCHES_KICH test normal

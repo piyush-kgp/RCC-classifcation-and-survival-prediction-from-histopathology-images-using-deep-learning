@@ -9,9 +9,9 @@
 
 source /home/delta_one/project/histopathology
 python dag_svm.py \
---kirc_train_file /home/delta_one/project/histopathology/cancer_patches_features/train_KIRC.npy \
---kirp_train_file /home/delta_one/project/histopathology/cancer_patches_features/train_KIRP.npy \
---kich_train_file /home/delta_one/project/histopathology/cancer_patches_features/train_KICH.npy \
---kirc_valid_file /home/delta_one/project/histopathology/cancer_patches_features/valid_KIRC.npy \
---kirp_valid_file /home/delta_one/project/histopathology/cancer_patches_features/valid_KIRP.npy \
---kich_valid_file /home/delta_one/project/histopathology/cancer_patches_features/valid_KICH.npy > dag_svm.txt
+--kirc_train_file /home/delta_one/project/histopathology/cancer_patches_features/epoch_13_features/train_KIRC_epoch_13.npy \
+--kirp_train_file /home/delta_one/project/histopathology/cancer_patches_features/epoch_13_features/train_KIRP_epoch_13.npy \
+--kich_train_file /home/delta_one/project/histopathology/cancer_patches_features/epoch_13_features/train_KICH_epoch_13.npy \
+--kirc_valid_file /home/delta_one/project/histopathology/cancer_patches_features/epoch_13_features/valid_KIRC_epoch_13.npy \
+--kirp_valid_file /home/delta_one/project/histopathology/cancer_patches_features/epoch_13_features/valid_KIRP_epoch_13.npy \
+--kich_valid_file /home/delta_one/project/histopathology/cancer_patches_features/epoch_13_features/valid_KICH_epoch_13.npy > dag_svm.txt

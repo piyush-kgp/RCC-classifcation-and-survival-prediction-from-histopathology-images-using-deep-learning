@@ -17,6 +17,8 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+from PIL import Image, ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
 parser = argparse.ArgumentParser(description='Process args for Classifer')

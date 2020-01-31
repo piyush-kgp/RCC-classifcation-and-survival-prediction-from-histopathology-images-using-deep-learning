@@ -15,11 +15,12 @@ parser.add_argument("--img_dir", type=str, required=True)
 parser.add_argument("--npy_file_path", type=str, required=True)
 parser.add_argument("--batch_size", type=int, default=64)
 parser.add_argument("--imagenet_model", type=str, default="resnet18")
+parser.add_argument("--model_checkpoint", type=str, required=True)
 parser.add_argument("--image_size", type=int, default=224)
 
 
 MODEL_DICT = {"resnet18" : models.resnet18(pretrained=True)}
-
+NUM_CLASSES = 3
 
 class ImageDataset(Dataset):
     def __init__(self, file_paths, transform):
@@ -56,29 +57,34 @@ def main():
     image_size = args.image_size
     imagenet_model = args.imagenet_model
     npy_file_path = args.npy_file_path
+    model_checkpoint = args.model_checkpoint
 
     transform = transforms.Compose([
-        transforms.RandomResizedCrop(image_size),
-        transforms.RandomHorizontalFlip(),
+        transforms.Resize(256),
+        transforms.CenterCrop(image_size),
         transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        transforms.Normalize([0.596, 0.436, 0.586], [0.2066, 0.240, 0.186])
         ])
 
-    # png_files, jpg_files, jpeg_files = [glob.glob(os.path.join(img_dir, ext)) \
-    #                                    for ext in ["*.png", "*.jpg", "*.jpeg"]]
-    # file_paths = png_files+jpg_files+jpeg_files
     file_paths = sorted(glob.glob("{}/*/*.png".format(img_dir)))
     dataset = ImageDataset(file_paths=file_paths, transform=transform)
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False)
 
     model = MODEL_DICT[imagenet_model]
+    model.fc = nn.Sequential(
+                nn.Dropout(p=0.2), # p is prob. of a neuron not being dropped out
+                nn.Linear(model.fc.in_features, NUM_CLASSES)
+                )
+    ckpt = torch.load(model_checkpoint)
+    ckpt = {k.replace("module.", ""): v for k, v in ckpt.items()}
+    model.load_state_dict(ckpt)
     model = nn.Sequential(*list(model.children())[:-1])
 
     for param in model.parameters():
         param.requires_grad = False
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = model.to(device)
+    model = nn.DataParallel(model).to(device)
     print("Extracting images from {} at {}".format(img_dir, npy_file_path), flush=True)
     feature_extraction(model, device, dataloader, batch_size, npy_file_path)
     print("FIN.", flush=True)

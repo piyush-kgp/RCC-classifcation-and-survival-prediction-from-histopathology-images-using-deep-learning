@@ -1,0 +1,6 @@
+==========================================
+SLURM_JOB_ID = 56420
+SLURM_NODELIST = gnode22
+SLURM_JOB_GPUS = 0,1
+==========================================
+slurmstepd: error: *** JOB 56420 ON gnode22 CANCELLED AT 2019-11-25T20:33:46 ***

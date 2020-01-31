@@ -31,17 +31,17 @@ def train(kirc_file, kirp_file, kich_file):
     Y_kirc_kich = np.concatenate([np.zeros((kirc.shape[0])), np.ones((kich.shape[0]))])
 
     print("Training KIRC-KIRP SVM", flush=True)
-    clf_kirc_kirp = svm.LinearSVC()
+    clf_kirc_kirp = svm.SVC(kernel = 'linear')
     clf_kirc_kirp.fit(X_kirc_kirp, Y_kirc_kirp)
     pickle.dump(clf_kirc_kirp, open("svm_kirc_kirp.pickle", 'wb'))
 
     print("Training KIRP-KICH SVM", flush=True)
-    clf_kirp_kich = svm.LinearSVC()
+    clf_kirp_kich = svm.SVC(kernel = 'linear')
     clf_kirp_kich.fit(X_kirp_kich, Y_kirp_kich)
     pickle.dump(clf_kirp_kich, open("svm_kirp_kich.pickle", 'wb'))
 
     print("Training KIRC-KICH SVM", flush=True)
-    clf_kirc_kich = svm.LinearSVC()
+    clf_kirc_kich = svm.SVC(kernel = 'linear')
     clf_kirc_kich.fit(X_kirc_kich, Y_kirc_kich)
     pickle.dump(clf_kirc_kich, open("svm_kirc_kich.pickle", 'wb'))
 
