@@ -6,9 +6,9 @@ import re
 log_file = "kirc_inference_log.txt"
 
 txt = open(log_file, 'r').read().strip().split('\n')[3:-2]
-test_files = glob.glob("/ssd_scratch/cvit/medical_data/TCGA_KIRC/test/*/*/*.png")
 
-assert len(txt)==len(test_files)
+# test_files = glob.glob("/ssd_scratch/cvit/medical_data/TCGA_KIRC/test/*/*/*.png")
+# assert len(txt)==len(test_files)
 
 df = pd.DataFrame(columns=["slide_id", "img_id", "gt", "py"])
 paths = [re.search("\".*\"", line).group(0).strip("\"") for line in txt]
